@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HookDecor — производство декоративных металлических цепей и штор в Казани. Проектирование, производство, монтаж под ключ. Архитектурные решения для интерьера и экстерьера.">
+    <meta name="keywords" content="декоративные цепи, металлические шторы, архитектурный декор, перегородки из цепей, декор интерьера, производство Казань, монтаж декора">
+    <meta name="author" content="HookDecor">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="HookDecor — Декоративные металлические цепи и шторы">
+    <meta property="og:description" content="Собственное производство в Казани. Проектирование, производство, монтаж под ключ.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hookdecor.ru">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HookDecor — Декоративные металлические цепи">
+    <meta name="twitter:description" content="Производство декоративных металлических цепей и штор в Казани">
+
+    <title>HookDecor — Декоративные металлические цепи и шторы | Производство Казань</title>
+
+    <link rel="canonical" href="https://hookdecor.ru/">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "HookDecor",
+        "description": "Производство декоративных металлических цепей и штор",
+        "url": "https://hookdecor.ru",
+        "logo": "https://hookdecor.ru/logo.png",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Казань",
+            "addressRegion": "Татарстан",
+            "addressCountry": "RU"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+7-843-XXX-XX-XX",
+            "contactType": "sales",
+            "areaServed": "RU",
+            "availableLanguage": "Russian"
+        },
+        "sameAs": []
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "HookDecor",
+        "url": "https://hookdecor.ru",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://hookdecor.ru/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+<style>
+/* ============================================
+   HOOKDECOR - Premium Metal Decor
+   Color Scheme:
+   - Primary Dark: #1a1f2e (графит)
+   - Primary Light: #f5f0eb (теплый белый)
+   - Accent: #c75b39 (терракотовый/медный)
+   - Text Dark: #2d3142
+   - Text Light: #6b7280
+   - Gold Highlight: #d4a574
+   ============================================ */
+
+:root {
+    --primary-dark: #1a1f2e;
+    --primary-light: #f5f0eb;
+    --accent: #c75b39;
+    --accent-hover: #a8482a;
+    --text-dark: #2d3142;
+    --text-light: #6b7280;
+    --gold: #d4a574;
+    --white: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--primary-dark);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+
+p {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    max-width: 65ch;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--white);
+    border-color: var(--accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(199, 91, 57, 0.3);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
+.btn-light {
+    background-color: var(--white);
+    color: var(--primary-dark);
+}
+
+.btn-light:hover {
+    background-color: var(--primary-light);
+}
+
+/* Container */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.header.scrolled {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: var(--transition);
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.nav a:hover {
+    color: var(--accent);
+}
+
+.header-contact {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.phone-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.phone-link:hover {
+    color: var(--accent);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #2d3142 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.03)"/></svg>');
+    background-size: 50px 50px;
+    opacity: 0.5;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    color: var(--white);
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.hero-text h1 span {
+    color: var(--gold);
+}
+
+.hero-text p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+    background: linear-gradient(45deg, rgba(199,91,57,0.2), rgba(212,165,116,0.2));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-image::before {
+    content: '◆ DECORATIVE METAL CHAINS ◆';
+    position: absolute;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.3);
+    font-weight: 300;
+}
+
+/* Floating elements */
+.float-element {
+    position: absolute;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 16px 24px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.float-1 { top: 10%; right: -20px; animation-delay: 0s; }
+.float-2 { bottom: 20%; left: -30px; animation-delay: 2s; }
+.float-3 { top: 50%; right: -40px; animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Section Styles */
+.section {
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    margin-bottom: 16px;
+}
+
+.section-header p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-label {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: rgba(199, 91, 57, 0.1);
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+/* Features / Advantages */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    padding: 40px 30px;
+    background: var(--white);
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover::before {
+    height: 100%;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(199,91,57,0.1), rgba(212,165,116,0.1));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+/* Products */
+.products-section {
+    background-color: var(--primary-light);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+.product-image {
+    height: 280px;
+    background: linear-gradient(135deg, #e8e4df, #d4cfc9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image::after {
+    content: attr(data-product);
+    font-size: 0.85rem;
+    color: var(--text-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.product-info {
+    padding: 30px;
+}
+
+.product-info h3 {
+    margin-bottom: 12px;
+}
+
+.product-info p {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.product-link {
+    color: var(--accent);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.product-link:hover {
+    gap: 12px;
+}
+
+/* Projects Gallery */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 400px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #3a3f4e, #2d3142);
+}
+
+.project-card.large {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: auto;
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 30px;
+    background: linear-gradient(transparent, rgba(26,31,46,0.95));
+    color: var(--white);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-overlay h3 {
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.project-overlay p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+}
+
+.project-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--accent);
+    color: var(--white);
+    font-size: 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+/* Process Section */
+.process-section {
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
+.process-section h2,
+.process-section .section-header p {
+    color: var(--white);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    position: relative;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+}
+
+.process-step::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    right: -20px;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.process-step:last-child::after {
+    display: none;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 auto 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.process-step h3 {
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.process-step p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+}
+
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 500px;
+    background: linear-gradient(135deg, #e8e4df, #d4cfc9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-image::after {
+    content: 'ПРОИЗВОДСТВО В КАЗАНИ';
+    font-size: 1rem;
+    color: var(--text-light);
+    letter-spacing: 3px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-item h4 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.stat-item p {
+    font-size: 0.95rem;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--accent), #a8482a);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.cta-section h2 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    color: rgba(255,255,255,0.9);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-white {
+    background: var(--white);
+    color: var(--accent);
+}
+
+.btn-white:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* Contact Section */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.contact-info h3 {
+    margin-bottom: 24px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(199,91,57,0.1), rgba(212,165,116,0.1));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--accent);
+}
+
+.contact-item h4 {
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+}
+
+.contact-item p {
+    font-size: 0.95rem;
+}
+
+.contact-form {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid rgba(0,0,0,0.08);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(199,91,57,0.1);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 80px 0 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-brand p {
+    color: rgba(255,255,255,0.7);
+    margin-top: 16px;
+    font-size: 0.95rem;
+}
+
+.footer-links h4 {
+    color: var(--white);
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--white);
+    z-index: 999;
+    padding: 100px 40px;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin: 0 auto 40px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-card.large {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-step::after {
+        display: none;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .header-contact .btn {
+        display: none;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card.large {
+        grid-column: span 1;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 120px 0 60px;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .float-element {
+        display: none;
+    }
+}
+
+/* SEO & AI Search Optimization */
+.schema-hidden {
+    display: none;
+}
+
+.breadcrumb {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--text-light);
+}
+
+.breadcrumb a:hover {
+    color: var(--accent);
+}
+
+.breadcrumb-separator {
+    color: var(--text-light);
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-dark), #2d3142);
+    padding: 140px 0 80px;
+    text-align: center;
+}
+
+.page-header h1 {
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.page-header p {
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Product Detail */
+.product-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.product-gallery {
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--primary-light);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-specs {
+    margin-top: 30px;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.spec-label {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.spec-value {
+    color: var(--text-light);
+}
+
+/* FAQ */
+.faq-item {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 24px 0;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-top: 0;
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    padding-top: 16px;
+}
+
+.faq-toggle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-toggle {
+    background: var(--accent);
+    color: var(--white);
+    transform: rotate(45deg);
+}
+
+</style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">Hook<span>Decor</span></a>
+                <nav class="nav">
+                    <a href="index.html">Главная</a>
+                    <a href="products.html">Продукция</a>
+                    <a href="projects.html">Проекты</a>
+                    <a href="about.html">О компании</a>
+                    <a href="contacts.html">Контакты</a>
+                </nav>
+                <div class="header-contact">
+                    <a href="tel:+7843XXXXXXX" class="phone-link">+7 (843) XXX-XX-XX</a>
+                    <a href="contacts.html" class="btn btn-primary">Оставить заявку</a>
+                </div>
+                <button class="mobile-menu-btn" aria-label="Открыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="mobile-menu-close" aria-label="Закрыть меню">×</button>
+        <a href="index.html">Главная</a>
+        <a href="products.html">Продукция</a>
+        <a href="projects.html">Проекты</a>
+        <a href="about.html">О компании</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="tel:+7843XXXXXXX" class="phone-link">+7 (843) XXX-XX-XX</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Декоративные металлические цепи и шторы <span>премиум-класса</span></h1>
+                    <p>Собственное производство в Казани. Полный цикл: проектирование, изготовление, монтаж под ключ. Создаем уникальные архитектурные решения для интерьера и экстерьера.</p>
+                    <div class="hero-buttons">
+                        <a href="products.html" class="btn btn-primary">Каталог продукции</a>
+                        <a href="contacts.html" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.5);">Бесплатная консультация</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image"></div>
+                    <div class="float-element float-1">
+                        <span style="color: white; font-size: 0.85rem;">✓ Собственное производство</span>
+                    </div>
+                    <div class="float-element float-2">
+                        <span style="color: white; font-size: 0.85rem;">✓ Проектный отдел</span>
+                    </div>
+                    <div class="float-element float-3">
+                        <span style="color: white; font-size: 0.85rem;">✓ Монтаж под ключ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Advantages -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Почему мы</span>
+                <h2>Преимущества работы с HookDecor</h2>
+                <p>Мы предлагаем полный спектр услуг — от идеи до реализации</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🏭</div>
+                    <h3>Собственное производство</h3>
+                    <p>Современное оборудование в Казани позволяет контролировать качество на каждом этапе и выполнять заказы любой сложности в сжатые сроки.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📐</div>
+                    <h3>Проектный отдел</h3>
+                    <p>Наши дизайнеры и инженеры разработают уникальное решение под ваш интерьер, учитывая все технические и эстетические требования.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Реализация под ключ</h3>
+                    <p>Возьмем на себя все этапы: замеры, производство, доставку и монтаж. Вам не нужно искать дополнительных подрядчиков.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">✓</div>
+                    <h3>Гарантия качества</h3>
+                    <p>Используем только высококачественные металлические сплавы. Даем гарантию на изделия и монтажные работы.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Индивидуальный дизайн</h3>
+                    <p>Любые цвета, размеры и формы. Анодирование, покраска, никелирование — создадим именно то, что вы задумали.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Доставка по России</h3>
+                    <p>Организуем доставку в любой город России. Надежная упаковка гарантирует сохранность изделий при транспортировке.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Preview -->
+    <section class="section products-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Продукция</span>
+                <h2>Наши изделия</h2>
+                <p>Широкий ассортимент декоративных металлических решений для любых задач</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image" data-product="ЦЕПНЫЕ ШТОРЫ"></div>
+                    <div class="product-info">
+                        <h3>Цепные шторы</h3>
+                        <p>Элегантные шторы из алюминиевых цепей для зонирования пространства и декоративных перегородок.</p>
+                        <a href="products.html#curtains" class="product-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image" data-product="ПЕРЕГОРОДКИ"></div>
+                    <div class="product-info">
+                        <h3>Декоративные перегородки</h3>
+                        <p>Мобильные и стационарные перегородки для офисов, ресторанов, торговых центров и жилых помещений.</p>
+                        <a href="products.html#partitions" class="product-link">Подробнее →</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image" data-product="ПОТОЛОЧНЫЕ ИНСТАЛЛЯЦИИ"></div>
+                    <div class="product-info">
+                        <h3>Потолочные инсталляции</h3>
+                        <p>Объемные потолочные конструкции из металлических цепей для создания уникальной атмосферы.</p>
+                        <a href="products.html#ceiling" class="product-link">Подробнее →</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="products.html" class="btn btn-outline">Вся продукция</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label" style="background: rgba(255,255,255,0.1); color: white;">Как мы работаем</span>
+                <h2>Процесс реализации проекта</h2>
+                <p>Четыре простых шага от задумки до готового решения</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Консультация</h3>
+                    <p>Обсуждаем ваши идеи, требования и бюджет. Проводим бесплатную консультацию на объекте или онлайн.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Проектирование</h3>
+                    <p>Наш проектный отдел разрабатывает дизайн-проект с учетом всех технических особенностей помещения.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Производство</h3>
+                    <p>Изготавливаем изделия на собственном производстве в Казани с полным контролем качества.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <div class="step-number">4</div>
+                    <h3>Монтаж</h3>
+                    <p>Профессиональная установка нашими специалистами с гарантией на все работы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Портфолио</span>
+                <h2>Реализованные проекты</h2>
+                <p>Примеры наших работ в различных сферах</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card large fade-in">
+                    <div class="project-overlay">
+                        <span class="project-tag">Ресторан</span>
+                        <h3>Цепная перегородка «Гастроном»</h3>
+                        <p>Казань — зонирование зала ресторана декоративными цепями</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-overlay">
+                        <span class="project-tag">Офис</span>
+                        <h3>Потолочная инсталляция IT-компании</h3>
+                        <p>Москва — декор ресепшн</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-overlay">
+                        <span class="project-tag">Торговый центр</span>
+                        <h3>Входная группа «Европа»</h3>
+                        <p>Санкт-Петербург — фасадное оформление</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-overlay">
+                        <span class="project-tag">Отель</span>
+                        <h3>Декор лобби «Plaza»</h3>
+                        <p>Нижний Новгород — шторы из цепей</p>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-overlay">
+                        <span class="project-tag">Жилой комплекс</span>
+                        <h3>Ограждение лестницы «Скай»</h3>
+                        <p>Казань — металлические цепи</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="projects.html" class="btn btn-outline">Все проекты</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image fade-in"></div>
+                <div class="fade-in">
+                    <span class="section-label">О компании</span>
+                    <h2>HookDecor — производитель декоративных металлических решений</h2>
+                    <p>Мы создаем уникальные архитектурные элементы из металлических цепей для интерьеров и экстерьеров. Собственное производство в Казани, современное оборудование и команда профессионалов позволяют реализовывать проекты любой сложности.</p>
+                    <p>Работаем с архитектурными бюро, дизайн-студиями, строительными компаниями и частными заказчиками по всей России.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h4 class="counter" data-target="150">0</h4>
+                            <p>Реализованных проектов</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 class="counter" data-target="50">0</h4>
+                            <p>Городов присутствия</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 class="counter" data-target="8">0</h4>
+                            <p>Лет на рынке</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 class="counter" data-target="25">0</h4>
+                            <p>Сотрудников в команде</p>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary" style="margin-top: 30px;">Подробнее о компании</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="fade-in">
+                <h2>Готовы обсудить ваш проект?</h2>
+                <p>Оставьте заявку на бесплатную консультацию. Наши специалисты свяжутся с вами в течение рабочего дня.</p>
+                <div class="cta-buttons">
+                    <a href="contacts.html" class="btn btn-white">Оставить заявку</a>
+                    <a href="tel:+7843XXXXXXX" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.5);">Позвонить</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="color: white;">Hook<span style="color: var(--gold);">Decor</span></a>
+                    <p>Производство декоративных металлических цепей и штор. Собственное производство в Казани. Полный цикл: проектирование, изготовление, монтаж.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Продукция</h4>
+                    <ul>
+                        <li><a href="products.html#curtains">Цепные шторы</a></li>
+                        <li><a href="products.html#partitions">Перегородки</a></li>
+                        <li><a href="products.html#ceiling">Потолочные инсталляции</a></li>
+                        <li><a href="products.html#facade">Фасадный декор</a></li>
+                        <li><a href="products.html#stairs">Ограждения лестниц</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Компания</h4>
+                    <ul>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="projects.html">Проекты</a></li>
+                        <li><a href="about.html#production">Производство</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Контакты</h4>
+                    <ul>
+                        <li><a href="tel:+7843XXXXXXX">+7 (843) XXX-XX-XX</a></li>
+                        <li><a href="mailto:info@hookdecor.ru">info@hookdecor.ru</a></li>
+                        <li><span style="color: rgba(255,255,255,0.7);">Казань, Татарстан</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 HookDecor. Все права защищены.</p>
+                <p>Собственное производство в Казани</p>
+            </div>
+        </div>
+    </footer>
+
+    
+<script>
+// ============================================
+// HOOKDECOR - Interactive Scripts
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile menu
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Fade in animation on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    fadeElements.forEach(el => fadeObserver.observe(el));
+
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', function() {
+            const isActive = item.classList.contains('active');
+
+            // Close all
+            faqItems.forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').classList.remove('active');
+            });
+
+            // Open clicked if wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                item.querySelector('.faq-answer').classList.add('active');
+            }
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Form validation
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            let valid = true;
+            const requiredFields = form.querySelectorAll('[required]');
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    valid = false;
+                    field.style.borderColor = '#e74c3c';
+                } else {
+                    field.style.borderColor = '';
+                }
+            });
+
+            if (!valid) {
+                e.preventDefault();
+                alert('Пожалуйста, заполните все обязательные поля');
+            }
+        });
+    });
+
+    // Counter animation for stats
+    const counters = document.querySelectorAll('.counter');
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                updateCounter();
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+
+});
+
+</script>
+</body>
+</html>
