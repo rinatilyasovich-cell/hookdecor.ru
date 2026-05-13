@@ -220,13 +220,15 @@ a {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(199,91,57,0.08) 0%, transparent 50%);
+    background: radial-gradient(circle, rgba(199,91,57,0.05) 0%, transparent 50%);
     animation: pulse 8s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.1); opacity: 0.8; }
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.1); opacity: 0.7; }
 }
 
 .hero-premium::after {
@@ -236,8 +238,9 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="0.5" fill="rgba(255,255,255,0.03)"/></svg>');
-    background-size: 60px 60px;
+    background: linear-gradient(180deg, rgba(15,17,23,0.35) 0%, rgba(15,17,23,0.15) 50%, rgba(15,17,23,0.55) 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .hero-content-premium {
@@ -1561,7 +1564,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Animate stats counter
     
-// WebGL Hero Effect
+// WebGL Hero — реалистичное искажение цепей
 (function(){
   var canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
@@ -1575,27 +1578,52 @@ document.addEventListener('DOMContentLoaded', function() {
   resize();
   window.addEventListener('resize', resize);
 
-  var vs = 'attribute vec2 p;varying vec2 v;void main(){v=p*.5+.5;gl_Position=vec4(p,0,1);}';
+  var vs = 'attribute vec2 p;varying vec2 v;void main(){v=p*.5+.5;v.y=1.0-v.y;gl_Position=vec4(p,0,1);}';
+
   var fs = [
-    'precision mediump float;',
-    'uniform sampler2D u;uniform vec2 m,r;uniform float t;varying vec2 v;',
+    'precision highp float;',
+    'uniform sampler2D u;',
+    'uniform vec2 r;',
+    'uniform vec2 ir;',
+    'uniform float t;',
+    'uniform vec3 cl[20];',
+    'uniform vec2 m;',
+    'uniform float ma;',
+    'varying vec2 v;',
     'void main(){',
+    '  float ca=r.x/r.y;',
+    '  float ia=ir.x/ir.y;',
     '  vec2 uv=v;',
-    '  vec2 ms=m/r; ms.y=1.-ms.y;',
-    '  float d=distance(uv,ms);',
-    '  float rip=sin(d*38.-t*3.8)*.022*smoothstep(.65,.0,d);',
-    '  vec2 dir=normalize(uv-ms+.0001);',
-    '  uv+=dir*rip;',
-    '  float wx=sin(uv.x*14.+t*.7)*.004+sin(uv.y*9.+t*.55)*.003;',
-    '  uv+=vec2(wx,wx*.6);',
-    '  uv=clamp(uv,0.,1.);',
-    '  vec4 c=texture2D(u,uv);',
-    '  float g=(c.r*.45+c.g*.35+c.b*.2);',
-    '  vec3 gold=vec3(1.15,.9,.55)*g;',
-    '  c.rgb=mix(c.rgb,gold,.18);',
-    '  float vig=1.-smoothstep(.3,.85,distance(v,vec2(.5)));',
-    '  c.rgb*=mix(.6,1.,vig);',
-    '  gl_FragColor=c;',
+    '  if(ca>ia){uv.y=(uv.y-0.5)*(ia/ca)+0.5;}',
+    '  else{uv.x=(uv.x-0.5)*(ca/ia)+0.5;}',
+    '  vec2 dp=vec2(0.0);',
+    '  for(int i=0;i<20;i++){',
+    '    vec3 c=cl[i];',
+    '    if(c.z<0.0)continue;',
+    '    float age=t-c.z;',
+    '    if(age>2.5)continue;',
+    '    vec2 d=uv-c.xy;',
+    '    float dist=length(d);',
+    '    float rp=age*0.35;',
+    '    float ring=smoothstep(0.12,0.0,abs(dist-rp));',
+    '    float decay=exp(-age*1.4);',
+    '    float w=sin(dist*35.0-age*8.0)*ring*decay*0.05;',
+    '    if(dist>0.001)dp+=normalize(d)*w;',
+    '  }',
+    '  if(ma>0.5){',
+    '    vec2 d=uv-m;',
+    '    float dist=length(d);',
+    '    if(dist<0.18&&dist>0.001){',
+    '      float f=1.0-smoothstep(0.0,0.18,dist);',
+    '      dp-=normalize(d)*f*0.045;',
+    '    }',
+    '  }',
+    '  float amb=sin(uv.y*6.0+t*0.8)*0.0018+sin(uv.x*4.0+t*0.6)*0.0012;',
+    '  dp.x+=amb;',
+    '  vec2 s=clamp(uv+dp,0.001,0.999);',
+    '  vec4 col=texture2D(u,s);',
+    '  col.rgb+=vec3(0.18,0.12,0.05)*length(dp)*20.0;',
+    '  gl_FragColor=col;',
     '}'
   ].join('');
 
@@ -1618,47 +1646,81 @@ document.addEventListener('DOMContentLoaded', function() {
   gl.enableVertexAttribArray(al);
   gl.vertexAttribPointer(al,2,gl.FLOAT,false,0,0);
 
-  var uM=gl.getUniformLocation(prog,'m');
-  var uT=gl.getUniformLocation(prog,'t');
   var uR=gl.getUniformLocation(prog,'r');
+  var uIR=gl.getUniformLocation(prog,'ir');
+  var uT=gl.getUniformLocation(prog,'t');
+  var uCL=gl.getUniformLocation(prog,'cl');
+  var uM=gl.getUniformLocation(prog,'m');
+  var uMA=gl.getUniformLocation(prog,'ma');
   var uU=gl.getUniformLocation(prog,'u');
 
-  var mx=canvas.offsetWidth/2, my=canvas.offsetHeight/2;
-  var hero=document.querySelector('.hero-premium');
-  hero.addEventListener('mousemove',function(e){
-    var r=canvas.getBoundingClientRect();
-    mx=e.clientX-r.left; my=e.clientY-r.top;
-  });
-  hero.addEventListener('touchmove',function(e){
-    e.preventDefault();
-    var r=canvas.getBoundingClientRect();
-    mx=e.touches[0].clientX-r.left;
-    my=e.touches[0].clientY-r.top;
-  },{passive:false});
+  var clicks = new Float32Array(60);
+  for (var i = 0; i < 20; i++) clicks[i*3+2] = -1;
+  var clickIdx = 0;
+  var mouseUV = [0.5, 0.5];
+  var mouseActive = 0;
+  var lastDrop = 0;
+  var startT = performance.now();
 
-  var img=new Image();
-  img.onload=function(){
-    var tex=gl.createTexture();
-    gl.bindTexture(gl.TEXTURE_2D,tex);
-    gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
-    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
-    gl.uniform1i(uU,0);
+  function addRipple(x, y){
+    var tt = (performance.now() - startT) / 1000;
+    clicks[clickIdx*3] = x;
+    clicks[clickIdx*3+1] = y;
+    clicks[clickIdx*3+2] = tt;
+    clickIdx = (clickIdx + 1) % 20;
+  }
+
+  function getUV(e){
+    var rect = canvas.getBoundingClientRect();
+    var x, y;
+    if (e.touches) { x = e.touches[0].clientX - rect.left; y = e.touches[0].clientY - rect.top; }
+    else { x = e.clientX - rect.left; y = e.clientY - rect.top; }
+    return [x / rect.width, y / rect.height];
+  }
+
+  var hero = document.querySelector('.hero-premium');
+  hero.addEventListener('mousemove', function(e){
+    mouseUV = getUV(e); mouseActive = 1;
+    var tt = (performance.now() - startT) / 1000;
+    if (tt - lastDrop > 0.1) { addRipple(mouseUV[0], mouseUV[1]); lastDrop = tt; }
+  });
+  hero.addEventListener('mouseleave', function(){ mouseActive = 0; });
+  hero.addEventListener('touchmove', function(e){
+    e.preventDefault();
+    mouseUV = getUV(e); mouseActive = 1;
+    var tt = (performance.now() - startT) / 1000;
+    if (tt - lastDrop > 0.1) { addRipple(mouseUV[0], mouseUV[1]); lastDrop = tt; }
+  }, {passive:false});
+  hero.addEventListener('touchend', function(){ mouseActive = 0; });
+
+  var img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = function(){
+    var tex = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, tex);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.uniform1i(uU, 0);
+    gl.uniform2f(uIR, img.width, img.height);
     canvas.classList.add('loaded');
-    function draw(ts){
+    function draw(){
       resize();
-      gl.viewport(0,0,canvas.width,canvas.height);
-      gl.uniform2f(uM,mx,my);
-      gl.uniform2f(uR,canvas.width,canvas.height);
-      gl.uniform1f(uT,ts*.001);
-      gl.drawArrays(gl.TRIANGLES,0,6);
+      var tt = (performance.now() - startT) / 1000;
+      gl.viewport(0, 0, canvas.width, canvas.height);
+      gl.uniform2f(uR, canvas.width, canvas.height);
+      gl.uniform1f(uT, tt);
+      gl.uniform3fv(uCL, clicks);
+      gl.uniform2f(uM, mouseUV[0], mouseUV[1]);
+      gl.uniform1f(uMA, mouseActive);
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
       requestAnimationFrame(draw);
     }
     requestAnimationFrame(draw);
   };
-  img.src='Metal%20meshes.jpeg';
+  img.src = 'Metal%20meshes.jpeg';
 })();
 
     document.querySelectorAll('.stat-item-premium h4').forEach(function(el) {
